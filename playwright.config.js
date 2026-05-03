@@ -26,6 +26,8 @@ reporter: 'html',
   use: {
     browserName:'chromium',
     headless : false,
+    screenshot:'on',
+    trace: 'retain-on-failure',
     /* Base URL to use in actions like `await page.goto('')`. */
     // baseURL: 'http://localhost:3000',
 
