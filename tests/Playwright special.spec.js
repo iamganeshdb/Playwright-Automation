@@ -8,7 +8,7 @@ test("Playwright special", async ({ page }) => {
     await page.getByLabel("Check me out if you Love IceCreams!").check();
     await page.getByLabel("Employed").click();
     await page.getByLabel("Gender").selectOption("Female");
-    await page.getByPlaceholder("Passwor").fill("12345678");
+    await page.getByPlaceholder("Password").fill("12345678");
     await page.getByRole("button", { name:'Submit'}).click();
     const ab = await page.getByText("Success! The Form has been submitted successfully!")
     await page.getByRole("link" , {name:'Shop'}).click();
