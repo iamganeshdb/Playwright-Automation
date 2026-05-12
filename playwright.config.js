@@ -25,7 +25,7 @@ reporter: 'html',
 
   use: {
     browserName:'chromium',
-    headless : false,
+    headless : true,
     screenshot:'on',
     trace: 'retain-on-failure',
     /* Base URL to use in actions like `await page.goto('')`. */
@@ -37,4 +37,4 @@ reporter: 'html',
 });
 module.exports=config;
 
-  
+   
