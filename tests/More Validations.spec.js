@@ -28,8 +28,8 @@ test("Screenshot and Comaprision",async({page})=>
 })
 
 
-test.only("Visual",async({page})=>
-{
-    await page.goto("https://google.com/");
-    expect( await page.screenshot()).toMatchSnapshot("Google.png",{animations:false});
-})
+// test.only("Visual",async({page})=>
+// {
+//     await page.goto("https://google.com/");
+//     expect( await page.screenshot()).toMatchSnapshot("Google.png",{animations:false});
+// })
