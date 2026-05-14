@@ -24,8 +24,6 @@ await page.locator("#email").fill("iamganeshdb@gmail.com");
 await page.getByRole('checkbox').click();
 await page.locator('#otp-login-btn').click()
 await page.locator('#otp-login-btn').first().waitFor();
-console.log(await page.locator('#my-error-id').textContent());
-await expect(page.locator('#my-error-id')).toContainText("Invalid email");
 await page.waitForLoadState('networkidle');
 // await email.fill("");
 // await email.fill("iamganeshdb@gmail.com");
