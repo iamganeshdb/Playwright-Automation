@@ -4,8 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test":"playwright test tests/Utils/APIUtils.js"
-
+    "test": "playwright test tests/Utils/APIUtils.js"
   },
   "keywords": [],
   "author": "",
@@ -14,5 +13,8 @@
   "devDependencies": {
     "@playwright/test": "^1.59.1",
     "@types/node": "^25.6.0"
+  },
+  "dependencies": {
+    "mobilewright": "^0.0.35"
   }
 }

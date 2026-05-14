@@ -10,22 +10,25 @@ console.log(await page.title());
 await expect(page).toHaveTitle("Google");
 });
 
-test('Second Playwright Test',async ({page})=>
+test.only('Second Playwright Test',async ({page})=>
 {
     const email=page.locator("#email");
     const signin=page.locator('#otp-login-btn');
 await page.goto('https://sso.teachable.com/secure/9521/identity/sign_up/otp?wizard_id=R9Sid7Bfn4bJnH1qv39bGondu2sXQQWFOGnUNrhvf_n4MYK9jlL8Kzw_XxKkHadNQKVkidvTI6sU_qL8L3yb2Q');
 console.log(await page.title());
+page.route('**/*.{png,jpeg}',route=>route.abort());//Blocking the CSS files to speed up the test execution
+page.on('request',request=>(console.log(request.url())));
+page.on('response',response=>(console.log(response.url(),response.status())));
 await page.locator('#name').fill("Ganesh");
-await page.locator("#email").fill("48393904843");
+await page.locator("#email").fill("iamganeshdb@gmail.com");
 await page.getByRole('checkbox').click();
 await page.locator('#otp-login-btn').click()
 await page.locator('#otp-login-btn').first().waitFor();
 console.log(await page.locator('#my-error-id').textContent());
 await expect(page.locator('#my-error-id')).toContainText("Invalid email");
 await page.waitForLoadState('networkidle');
-await email.fill("");
-await email.fill("iamganeshdb@gmail.com");
-await signin.click();
+// await email.fill("");
+// await email.fill("iamganeshdb@gmail.com");
+// await signin.click();
 
 });

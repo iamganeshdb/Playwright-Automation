@@ -18,3 +18,18 @@ test("MoreValidation",async({page})=>{
 
       
 })
+test("Screenshot and Comaprision",async({page})=>
+{
+    await page.goto("https://rahulshettyacademy.com/Automationpractice/");
+    await expect(page.locator("#displayed-text")).toBeVisible();
+    await page.locator("#displayed-text").screenshot({path:"DisplayedText.png"});
+    await page.locator("#hide-textbox").click();
+    await page.screenshot({path:"Screenshot.png"});
+})
+
+
+test.only("Visual",async({page})=>
+{
+    await page.goto("https://google.com/");
+    expect( await page.screenshot()).toMatchSnapshot("Google.png",{animations:false});
+})
