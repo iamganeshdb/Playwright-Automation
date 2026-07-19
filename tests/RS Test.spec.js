@@ -4,7 +4,7 @@ const { isArrayBufferView } = require('util/types');
  
  
  
-test("Ganesh Practice", async ({ page }) => {
+test("@web Ganesh Practice", async ({ page }) => {
     const products=page.locator(".card-body");
     const productName="ZARA COAT 3";
     const email="anshika@gmail.com"

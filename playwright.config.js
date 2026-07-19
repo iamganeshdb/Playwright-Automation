@@ -14,7 +14,11 @@ import { defineConfig, devices } from '@playwright/test';
  */
 const config=({
   testDir: './tests',
-timeout: 400 * 1000,//every step
+  testIgnore: [
+        "PriceLabs_Assignment/**"
+    ],
+
+timeout: 400 * 100,//every step
 expect:{
   timeout: 4000,
 },
@@ -25,9 +29,12 @@ reporter: 'html',
 
   use: {
     browserName:'chromium',
-    headless : true,
+    headless : false,
     screenshot:'on',
     trace: 'on',
+    launchOptions: {
+      args: ['--disable-blink-features=AutomationControlled']//Reducing bot detection
+    }
     /* Base URL to use in actions like `await page.goto('')`. */
     // baseURL: 'http://localhost:3000',
 

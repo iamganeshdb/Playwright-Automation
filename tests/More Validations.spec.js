@@ -1,6 +1,7 @@
 const{test,expect}=require('@playwright/test');
 const { hasUncaughtExceptionCaptureCallback } = require('process');
-
+// test.describe.configure({mode:'parallel'});
+//test.describe.configure({mode:'serial'});
 test("MoreValidation",async({page})=>{
     await page.goto("https://rahulshettyacademy.com/Automationpractice/");
     // await page.goto("https://google.com");
@@ -9,7 +10,7 @@ test("MoreValidation",async({page})=>{
     await expect(page.locator("#displayed-text")).toBeVisible();
     await page.locator("#hide-textbox").click();
     await expect(page.locator("#displayed-text")).toBeHidden();
-    await page.locator("#confirmbtn").click();
+    await page.locator("#confirmbn").click();
     await page.on("dialog", dialog => dialog.accept());
     await page.locator("#mousehover").hover();
     // const framePage = page.frameLocator("#courses-iframe");

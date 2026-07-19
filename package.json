@@ -4,18 +4,25 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "playwright test tests/Utils/APIUtils.js"
+    "Regression": "npx playwright test --project=chromium",
+    "WebTest": "npx playwright test --grep @web",
+    "test": "npx playwright test"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "type": "commonjs",
   "devDependencies": {
-    "@playwright/test": "^1.59.1",
-    "@types/node": "^25.6.0"
+    "@playwright/test": "^1.61.1",
+    "@types/node": "^25.9.5",
+    "allure-playwright": "^3.10.2",
+    "typescript": "^7.0.2"
   },
   "dependencies": {
+    "exceljs": "^4.4.0",
     "mobilewright": "^0.0.35",
-    "exceljs": "^4.4.0"
+    "playwright-extra": "^4.3.6",
+    "puppeteer-extra-plugin-stealth": "^2.11.2",
+    "rebrowser-playwright": "^1.52.0"
   }
 }
