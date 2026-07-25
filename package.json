@@ -19,6 +19,7 @@
     "typescript": "^7.0.2"
   },
   "dependencies": {
+    "@cucumber/cucumber": "^12.9.0",
     "exceljs": "^4.4.0",
     "mobilewright": "^0.0.35",
     "playwright-extra": "^4.3.6",

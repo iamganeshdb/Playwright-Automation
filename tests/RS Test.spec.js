@@ -8,9 +8,10 @@ test("@web Ganesh Practice", async ({ page }) => {
     const products=page.locator(".card-body");
     const productName="ZARA COAT 3";
     const email="anshika@gmail.com"
+    const password="Iamking@000"
     await page.goto("https://rahulshettyacademy.com/client/#/auth/login");
     await page.locator("#userEmail").fill(email);
-    await page.locator("#userPassword").fill("Iamking@000");
+    await page.locator("#userPassword").fill(password);
     await page.locator("#login").click();
     await page.waitForLoadState("networkidle");
    

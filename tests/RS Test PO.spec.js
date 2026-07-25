@@ -71,7 +71,6 @@ for (const data of placeOrderData) {
         await page.locator("tbody").first().waitFor();
         const rows = await page.locator("tbody tr");
         for (let i = 0; i < await rows.count(); i++) {
-            let cartId;
             const rowoderid = await rows.nth(i).locator("th").textContent();
             if (await cartId.includes(rowoderid)) {
                 await rows.nth(i).locator("button").first().click();

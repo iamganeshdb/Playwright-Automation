@@ -8,21 +8,18 @@ constructor(page)
 
 async SearchProduct(productName)
 {
-    
-   
-const open=await this.products.first().textContent();
-const appl=await this.products.locator("b").allTextContents();
-console.log(appl);
- 
-const count=await this.products.count();
-for(let i=0;i<count;i++)
-{
-    if(await this.products.nth(i).locator("b").textContent()===productName)
-    {
-        await this.products.nth(i).locator("text= Add To Cart").click();
-        break;
+    const expectedName = productName.trim().toLowerCase();
+    const count = await this.products.count();
+
+    for (let i = 0; i < count; i++) {
+        const actualName = (await this.products.nth(i).locator("b").textContent()).trim().toLowerCase();
+        if (actualName === expectedName) {
+            await this.products.nth(i).locator("text= Add To Cart").click();
+            return;
+        }
     }
-}
+
+    throw new Error(`Product not found: ${productName}`);
 }
 
 async navigateToCart()
