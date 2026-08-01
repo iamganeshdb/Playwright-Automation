@@ -10,7 +10,7 @@ test("MoreValidation",async({page})=>{
     await expect(page.locator("#displayed-text")).toBeVisible();
     await page.locator("#hide-textbox").click();
     await expect(page.locator("#displayed-text")).toBeHidden();
-    await page.locator("#confirmbn").click();
+    await page.locator("#confirmbtn").click();
     await page.on("dialog", dialog => dialog.accept());
     await page.locator("#mousehover").hover();
     // const framePage = page.frameLocator("#courses-iframe");

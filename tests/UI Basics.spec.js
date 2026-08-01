@@ -10,7 +10,7 @@ console.log(await page.title());
 await expect(page).toHaveTitle("Google");
 });
 
-test.only('Second Playwright Test',async ({page})=>
+test('Second Playwright Test',async ({page})=>
 {
     const email=page.locator("#email");
     const signin=page.locator('#otp-login-btn');

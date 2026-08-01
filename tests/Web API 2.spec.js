@@ -8,8 +8,8 @@ const { isArrayBufferView } = require('util/types');
     const context = await browser.newContext();
     const page = await context.newPage();
     await page.goto("https://rahulshettyacademy.com/client");
-    await page.locator("#userEmail").fill("anshika@gmail.com");
-    await page.locator("#userPassword").fill("Iamking@000");
+    await page.locator("#userEmail").fill("ganeshplaywright@gmail.com");
+    await page.locator("#userPassword").fill("9731@Ganesh");
     await page.locator("#login").click();
     await page.waitForLoadState("networkidle");
     await context.storageState({path:"state.json"});//Saving the storage state in a file
@@ -18,7 +18,7 @@ const { isArrayBufferView } = require('util/types');
  
 test("Ganesh Practice", async () => { 
     const productName="ZARA COAT 3";
-    const email="anshika@gmail.com"
+    const email="ganeshplaywright@gmail.com"
     const page = await webContext.newPage();//Creating a new page in the new context
     await page.goto("https://rahulshettyacademy.com/client");
     const products=page.locator(".card-body");

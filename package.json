@@ -6,13 +6,16 @@
   "scripts": {
     "Regression": "npx playwright test --project=chromium",
     "WebTest": "npx playwright test --grep @web",
-    "test": "npx playwright test"
+    "test": "npx playwright test",
+    "Regression-cucumber": "npx cucumber-js  features/Ecommerce.feature  --exit --format html:cucumber-report.html"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "type": "commonjs",
   "devDependencies": {
+    "@azure/identity": "^4.13.1",
+    "@azure/playwright": "^1.1.6",
     "@playwright/test": "^1.61.1",
     "@types/node": "^25.9.5",
     "allure-playwright": "^3.10.2",

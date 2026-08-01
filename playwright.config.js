@@ -14,9 +14,8 @@ import { defineConfig, devices } from '@playwright/test';
  */
 const config=({
   testDir: './tests',
-  testIgnore: [
-        "PriceLabs_Assignment/**"
-    ],
+  testMatch: '**/*.spec.js',
+
 
 timeout: 400 * 100,//every step
 expect:{

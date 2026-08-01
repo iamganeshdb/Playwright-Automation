@@ -6,10 +6,7 @@ const{chromium} = require('playwright');
 Given('a login to Ecommerce application with {string} and {string}', async function (username, password) {
            // Write code here that turns the phrase above into concrete actions
          
-        const browser = await chromium.launch();
-        const context = await browser.newContext();
-        this.page = await context.newPage();//By adding this scope will not end in method instead it will be stored in world constructor available for all the methods in this class
-        this.poManager = new POManager(this.page);
+        
         const products = this.page.locator(".card-body");
         const LoginPage = this.poManager.getLoginPage();
         this.cartPage = this.poManager.getCartPage();
