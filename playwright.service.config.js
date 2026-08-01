@@ -19,7 +19,7 @@ export default defineConfig(
 
     Note: The HTML reporter must be included before Playwright Workspaces Reporter.
     This configuration will replace any existing reporter settings from your base config.
-    If you're already using other reporters, add them to this array.
+    If you're already using other reporters, add them to this array. Test
     */
     reporter: [
     ["html", { open: "never" }],
