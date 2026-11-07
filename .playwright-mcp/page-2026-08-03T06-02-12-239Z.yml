@@ -1,0 +1,124 @@
+- generic [ref=e3]:
+  - navigation [ref=e5]:
+    - generic [ref=e7]:
+      - link "Automation Automation Practice":
+        - /url: ""
+        - generic [ref=e8] [cursor=pointer]:
+          - heading "Automation" [level=3] [ref=e9]
+          - paragraph [ref=e10]: Automation Practice
+    - text: 
+    - link "Get Shortlisted by Recruiters - Take QA Skill Assessments on TechSmartHire" [ref=e11] [cursor=pointer]:
+      - /url: https://techsmarthire.com/
+    - list [ref=e12]:
+      - listitem [ref=e13] [cursor=pointer]:
+        - button " HOME" [ref=e14]:
+          - generic [ref=e15]: 
+          - text: HOME
+      - listitem
+      - listitem [ref=e16] [cursor=pointer]:
+        - button " ORDERS" [ref=e17]:
+          - generic [ref=e18]: 
+          - text: ORDERS
+      - listitem [ref=e19] [cursor=pointer]:
+        - button " Cart 1" [ref=e20]:
+          - generic [ref=e21]: 
+          - text: Cart
+          - generic [ref=e22]: "1"
+      - listitem [ref=e23] [cursor=pointer]:
+        - button "Sign Out" [ref=e24]:
+          - generic [ref=e25]: 
+          - text: Sign Out
+  - generic [ref=e26]:
+    - heading "Your Orders" [level=1] [ref=e27]
+    - table [ref=e28]:
+      - rowgroup [ref=e29]:
+        - row "Order Id Product Image Name Price Ordered Date View Delete" [ref=e30]:
+          - columnheader "Order Id" [ref=e31]
+          - columnheader "Product Image" [ref=e32]
+          - columnheader "Name" [ref=e33]
+          - columnheader "Price" [ref=e34]
+          - columnheader "Ordered Date" [ref=e35]
+          - columnheader "View" [ref=e36]
+          - columnheader "Delete" [ref=e37]
+      - rowgroup [ref=e38]:
+        - row "6a6dcf9685b8849b49223f3a ZARA COAT 3 $ 11500 Sat Aug 01 View Delete" [ref=e39]:
+          - rowheader "6a6dcf9685b8849b49223f3a" [ref=e40]
+          - cell [ref=e41]:
+            - img [ref=e42]
+          - cell "ZARA COAT 3" [ref=e43]
+          - cell "$ 11500" [ref=e44]
+          - cell "Sat Aug 01" [ref=e45]
+          - cell "View" [ref=e46]:
+            - button "View" [ref=e47] [cursor=pointer]
+          - cell "Delete" [ref=e48]:
+            - button "Delete" [ref=e49] [cursor=pointer]
+        - row "6a6dcf5c85b8849b49223e5d ADIDAS ORIGINAL $ 11500 Sat Aug 01 View Delete" [ref=e50]:
+          - rowheader "6a6dcf5c85b8849b49223e5d" [ref=e51]
+          - cell [ref=e52]:
+            - img [ref=e53]
+          - cell "ADIDAS ORIGINAL" [ref=e54]
+          - cell "$ 11500" [ref=e55]
+          - cell "Sat Aug 01" [ref=e56]
+          - cell "View" [ref=e57]:
+            - button "View" [ref=e58] [cursor=pointer]
+          - cell "Delete" [ref=e59]:
+            - button "Delete" [ref=e60] [cursor=pointer]
+        - row "6a6dcf1285b8849b49223cf5 ZARA COAT 3 $ 11500 Sat Aug 01 View Delete" [ref=e61]:
+          - rowheader "6a6dcf1285b8849b49223cf5" [ref=e62]
+          - cell [ref=e63]:
+            - img [ref=e64]
+          - cell "ZARA COAT 3" [ref=e65]
+          - cell "$ 11500" [ref=e66]
+          - cell "Sat Aug 01" [ref=e67]
+          - cell "View" [ref=e68]:
+            - button "View" [ref=e69] [cursor=pointer]
+          - cell "Delete" [ref=e70]:
+            - button "Delete" [ref=e71] [cursor=pointer]
+        - row "6a6dcc4885b8849b4922346d ADIDAS ORIGINAL $ 11500 Sat Aug 01 View Delete" [ref=e72]:
+          - rowheader "6a6dcc4885b8849b4922346d" [ref=e73]
+          - cell [ref=e74]:
+            - img [ref=e75]
+          - cell "ADIDAS ORIGINAL" [ref=e76]
+          - cell "$ 11500" [ref=e77]
+          - cell "Sat Aug 01" [ref=e78]
+          - cell "View" [ref=e79]:
+            - button "View" [ref=e80] [cursor=pointer]
+          - cell "Delete" [ref=e81]:
+            - button "Delete" [ref=e82] [cursor=pointer]
+        - row "6a6dcc0a85b8849b492233bb ZARA COAT 3 $ 11500 Sat Aug 01 View Delete" [ref=e83]:
+          - rowheader "6a6dcc0a85b8849b492233bb" [ref=e84]
+          - cell [ref=e85]:
+            - img [ref=e86]
+          - cell "ZARA COAT 3" [ref=e87]
+          - cell "$ 11500" [ref=e88]
+          - cell "Sat Aug 01" [ref=e89]
+          - cell "View" [ref=e90]:
+            - button "View" [ref=e91] [cursor=pointer]
+          - cell "Delete" [ref=e92]:
+            - button "Delete" [ref=e93] [cursor=pointer]
+        - row "6a6dc93985b8849b49222c9c ZARA COAT 3 $ 11500 Sat Aug 01 View Delete" [ref=e94]:
+          - rowheader "6a6dc93985b8849b49222c9c" [ref=e95]
+          - cell [ref=e96]:
+            - img [ref=e97]
+          - cell "ZARA COAT 3" [ref=e98]
+          - cell "$ 11500" [ref=e99]
+          - cell "Sat Aug 01" [ref=e100]
+          - cell "View" [ref=e101]:
+            - button "View" [ref=e102] [cursor=pointer]
+          - cell "Delete" [ref=e103]:
+            - button "Delete" [ref=e104] [cursor=pointer]
+        - row "6a6dc90685b8849b49222bcc ADIDAS ORIGINAL $ 11500 Sat Aug 01 View Delete" [ref=e105]:
+          - rowheader "6a6dc90685b8849b49222bcc" [ref=e106]
+          - cell [ref=e107]:
+            - img [ref=e108]
+          - cell "ADIDAS ORIGINAL" [ref=e109]
+          - cell "$ 11500" [ref=e110]
+          - cell "Sat Aug 01" [ref=e111]
+          - cell "View" [ref=e112]:
+            - button "View" [ref=e113] [cursor=pointer]
+          - cell "Delete" [ref=e114]:
+            - button "Delete" [ref=e115] [cursor=pointer]
+    - generic [ref=e116]: "* If orders Will be more than 7 your last order will get deleted"
+  - generic [ref=e118]:
+    - button "Go Back to Shop" [ref=e119] [cursor=pointer]
+    - button "Go Back to Cart" [ref=e120] [cursor=pointer]

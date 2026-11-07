@@ -1,0 +1,34 @@
+- generic [ref=e404]:
+  - navigation [ref=e406]:
+    - generic [ref=e408]:
+      - link "Automation Automation Practice":
+        - /url: ""
+        - generic [ref=e409] [cursor=pointer]:
+          - heading "Automation" [level=3] [ref=e410]
+          - paragraph [ref=e411]: Automation Practice
+    - text: 
+    - link "Get Shortlisted by Recruiters - Take QA Skill Assessments on TechSmartHire" [ref=e412] [cursor=pointer]:
+      - /url: https://techsmarthire.com/
+    - list [ref=e413]:
+      - listitem [ref=e414] [cursor=pointer]:
+        - button " HOME" [ref=e415]:
+          - generic [ref=e416]: 
+          - text: HOME
+      - listitem
+      - listitem [ref=e417] [cursor=pointer]:
+        - button " ORDERS" [ref=e418]:
+          - generic [ref=e419]: 
+          - text: ORDERS
+      - listitem [ref=e420] [cursor=pointer]:
+        - button " Cart" [ref=e421]:
+          - generic [ref=e422]: 
+          - text: Cart
+      - listitem [ref=e423] [cursor=pointer]:
+        - button "Sign Out" [ref=e424]:
+          - generic [ref=e425]: 
+          - text: Sign Out
+  - generic [ref=e426]:
+    - generic [ref=e427]:
+      - heading "My Cart" [level=1] [ref=e428]
+      - button "Continue Shopping❯" [ref=e429] [cursor=pointer]
+    - heading "No Products in Your Cart !" [level=1] [ref=e431]
