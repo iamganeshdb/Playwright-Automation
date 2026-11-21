@@ -4,10 +4,12 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "Regression": "npx playwright test --project=chromium",
-    "WebTest": "npx playwright test --grep @web",
+    "regression": "npx playwright test",
+    "web-test": "npx playwright test --grep @web",
     "test": "npx playwright test",
-    "Regression-cucumber": "npx cucumber-js  features/Ecommerce.feature  --exit --format html:cucumber-report.html"
+    "test:js": "npx playwright test --project=javascript",
+    "test:ts": "npx playwright test --project=typescript",
+    "cucumber": "npx cucumber-js features/Ecommerce.feature --exit --format html:cucumber-report.html"
   },
   "keywords": [],
   "author": "",

@@ -1,46 +1,34 @@
 // @ts-check
-import { defineConfig, devices } from '@playwright/test';
+const { defineConfig } = require('@playwright/test');
 
-/**
- * Read environment variables from file.
- * https://github.com/motdotla/dotenv
- */
-// import dotenv from 'dotenv';
-// import path from 'path';
-// dotenv.config({ path: path.resolve(__dirname, '.env') });
-
-/**
- * @see https://playwright.dev/docs/test-configuration
- */
-const config=({
-  testDir: './tests',
-  testMatch: '**/*.spec.js',
-
-
-timeout: 400 * 100,//every step
-expect:{
-  timeout: 4000,
-},
-reporter: 'html',
-
-
-
-
-  use: {
-    browserName:'chromium',
-    headless : false,
-    screenshot:'on',
-    trace: 'on',
-    launchOptions: {
-      args: ['--disable-blink-features=AutomationControlled']//Reducing bot detection
-    }
-    /* Base URL to use in actions like `await page.goto('')`. */
-    // baseURL: 'http://localhost:3000',
-
-    /* Collect trace when retrying the failed test. See https://playwright.dev/docs/trace-viewer */
-    
+const config = defineConfig({
+  timeout: 40 * 1000,
+  expect: {
+    timeout: 4000,
   },
+  reporter: 'html',
+  use: {
+    browserName: 'chromium',
+    headless: false,
+    screenshot: 'only-on-failure',
+    trace: 'retain-on-failure',
+    launchOptions: {
+      args: ['--disable-blink-features=AutomationControlled'],
+    },
+  },
+  projects: [
+    {
+      name: 'javascript',
+      testDir: './tests/javascript',
+      testMatch: '**/*.spec.js',
+    },
+    {
+      name: 'typescript',
+      testDir: './tests/typescript',
+      testMatch: '**/*.spec.ts',
+    },
+  ],
+  workers: 1,
 });
-module.exports=config;
 
-   
+module.exports = config;

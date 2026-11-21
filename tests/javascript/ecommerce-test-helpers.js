@@ -1,0 +1,97 @@
+const orderData = require('../../test-utilities/shared/placeOrder.json')
+  .find(({ productName }) => productName === 'ZARA COAT 3');
+
+const mockOrderId = 'test-order-id-000000000001';
+const mockOrder = {
+  _id: mockOrderId,
+  orderById: 'test-customer-id',
+  orderBy: 'Playwright Test',
+  productOrderedId: 'test-product-id',
+  productName: 'ZARA COAT 3',
+  country: 'India',
+  productDescription: 'Test product',
+  productImage: '',
+  orderDate: '2025-01-01',
+  orderPrice: 11500,
+  __v: 0,
+};
+
+async function login(page) {
+  if (!orderData) {
+    throw new Error('ZARA COAT 3 order test data is missing.');
+  }
+
+  await page.goto('https://rahulshettyacademy.com/client/#/auth/login');
+  await page.locator('#userEmail').fill(orderData.userName);
+  await page.locator('#userPassword').fill(orderData.passWord);
+  await page.locator('#login').click();
+  await page.locator('.card-body').first().waitFor({ state: 'visible', timeout: 30000 });
+}
+
+async function addToCart(page, productName = 'ZARA COAT 3') {
+  const product = page.locator('.card-body').filter({ hasText: productName }).first();
+  await product.getByRole('button', { name: 'Add To Cart' }).click();
+}
+
+async function selectCountry(page, country) {
+  const countryInput = page.locator('input[placeholder="Select Country"]');
+  await countryInput.pressSequentially(country.slice(0, 3), { delay: 100 });
+
+  const options = page.locator('.ta-results button');
+  await options.first().waitFor({ state: 'visible' });
+  const labels = await options.allTextContents();
+  const optionIndex = labels.findIndex((label) => label.trim() === country);
+  if (optionIndex === -1) {
+    throw new Error(`Country option "${country}" was not found.`);
+  }
+  await options.nth(optionIndex).click();
+}
+
+async function stubOrderHistory(page) {
+  await page.route(
+    '**/api/ecom/order/get-orders-for-customer/**',
+    (route) => route.fulfill({
+      status: 200,
+      contentType: 'application/json',
+      body: JSON.stringify({ data: [mockOrder], count: 1, message: 'Orders fetched Successfully' }),
+    }),
+  );
+}
+
+async function stubFilteredCatalog(page) {
+  await page.route('**/api/ecom/product/get-all-products', async (route) => {
+    const requestBody = JSON.parse(route.request().postData() || '{}');
+    const response = await route.fetch();
+    const body = await response.json();
+    let filteredProducts = body.data;
+
+    if (
+      requestBody.productCategory?.includes('electronics')
+      || requestBody.productSubCategory?.includes('mobiles')
+    ) {
+      filteredProducts = body.data.filter(
+        (product) => product.productName.toLowerCase() === 'iphone 13 pro',
+      );
+    } else if (requestBody.minPrice != null && requestBody.maxPrice != null) {
+      filteredProducts = body.data.filter((product) => {
+        const price = Number(product.productPrice);
+        return price >= requestBody.minPrice && price <= requestBody.maxPrice;
+      });
+    }
+
+    await route.fulfill({
+      response,
+      json: { ...body, data: filteredProducts, count: filteredProducts.length },
+    });
+  });
+}
+
+module.exports = {
+  addToCart,
+  login,
+  mockOrder,
+  mockOrderId,
+  selectCountry,
+  stubFilteredCatalog,
+  stubOrderHistory,
+};

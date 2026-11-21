@@ -6,3 +6,19 @@ node_modules/
 /blob-report/
 /playwright/.cache/
 /playwright/.auth/
+playwright-report/
+test-results/
+blob-report/
+allure-results/
+allure-report/
+cucumber-report.html
+*.png
+*.webm
+*.zip
+.playwright-mcp/
+user-data/
+auth.json
+state.json
+
+# macOS
+.DS_Store
