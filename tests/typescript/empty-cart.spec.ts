@@ -1,6 +1,6 @@
 // Verifies an empty cart has no checkout action.
 import { expect, test } from '@playwright/test';
-import { login } from './ecommerce-test-helpers';
+import { login } from '../../test-utilities/typescript/ecommerce-test-helpers';
 
 test('shows the empty cart state and prevents checkout', async ({ page }) => {
   await login(page);

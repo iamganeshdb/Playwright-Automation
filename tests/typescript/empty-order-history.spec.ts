@@ -1,6 +1,6 @@
 // Mocks an empty orders response and verifies the empty-history message and missing order actions.
 import { expect, request, test } from '@playwright/test';
-import { ApiTestUtils } from './api-test-utils';
+import { ApiTestUtils } from '../../test-utilities/typescript/api-test-utils';
 
 const loginPayload = {
   userEmail: 'anshika@gmail.com',

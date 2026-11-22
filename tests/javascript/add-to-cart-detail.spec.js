@@ -1,6 +1,6 @@
 // Adds a product to the cart from its detail page.
 const { expect, test } = require('@playwright/test');
-const { login } = require('./ecommerce-test-helpers');
+const { login } = require('../../test-utilities/javascript/ecommerce-test-helpers');
 
 test('adds a product to the cart from its detail page', async ({ page }) => {
   await login(page);

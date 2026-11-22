@@ -1,6 +1,6 @@
 // Verifies price-range requests display only products in the selected range.
 const { expect, test } = require('@playwright/test');
-const { login, stubFilteredCatalog } = require('./ecommerce-test-helpers');
+const { login, stubFilteredCatalog } = require('../../test-utilities/javascript/ecommerce-test-helpers');
 
 test('filters products by minimum and maximum price', async ({ page }) => {
   await stubFilteredCatalog(page);

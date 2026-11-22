@@ -1,6 +1,6 @@
 // Verifies order deletion while intercepting the request to protect account data.
 const { expect, test } = require('@playwright/test');
-const { login, mockOrder, mockOrderId } = require('./ecommerce-test-helpers');
+const { login, mockOrder, mockOrderId } = require('../../test-utilities/javascript/ecommerce-test-helpers');
 
 test('deletes the mocked order without modifying account data', async ({ page }) => {
   let orderDeleted = false;

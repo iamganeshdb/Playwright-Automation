@@ -1,6 +1,6 @@
 // Adds a product to the cart from its detail page.
 import { expect, test } from '@playwright/test';
-import { login } from './ecommerce-test-helpers';
+import { login } from '../../test-utilities/typescript/ecommerce-test-helpers';
 
 test('adds a product to the cart from its detail page', async ({ page }) => {
   await login(page);

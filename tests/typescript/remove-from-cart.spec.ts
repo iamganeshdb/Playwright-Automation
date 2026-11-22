@@ -1,6 +1,6 @@
 // Removes a product from the cart and verifies the empty state.
 import { expect, test } from '@playwright/test';
-import { addToCart, login } from './ecommerce-test-helpers';
+import { addToCart, login } from '../../test-utilities/typescript/ecommerce-test-helpers';
 
 test('removes a product from the cart', async ({ page }) => {
   await login(page);

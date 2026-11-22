@@ -1,31 +1,8 @@
-// Provides typed helpers and deterministic order data for the e-commerce specs.
-import type { Page } from '@playwright/test';
-
-interface OrderFixture {
-  userName: string;
-  passWord: string;
-  productName: string;
-  country: string;
-}
-
-interface CatalogProduct {
-  productName: string;
-  productPrice: number | string;
-}
-
-interface FilterRequest {
-  productName?: string;
-  minPrice?: number | null;
-  maxPrice?: number | null;
-  productCategory?: string[];
-  productSubCategory?: string[];
-}
-
-const orderData = (require('../../test-utilities/shared/placeOrder.json') as OrderFixture[])
+const orderData = require('../shared/placeOrder.json')
   .find(({ productName }) => productName === 'ZARA COAT 3');
 
-export const mockOrderId = 'test-order-id-000000000001';
-export const mockOrder = {
+const mockOrderId = 'test-order-id-000000000001';
+const mockOrder = {
   _id: mockOrderId,
   orderById: 'test-customer-id',
   orderBy: 'Playwright Test',
@@ -39,7 +16,7 @@ export const mockOrder = {
   __v: 0,
 };
 
-export async function login(page: Page): Promise<void> {
+async function login(page) {
   if (!orderData) {
     throw new Error('ZARA COAT 3 order test data is missing.');
   }
@@ -51,12 +28,12 @@ export async function login(page: Page): Promise<void> {
   await page.locator('.card-body').first().waitFor({ state: 'visible', timeout: 30000 });
 }
 
-export async function addToCart(page: Page, productName = 'ZARA COAT 3'): Promise<void> {
+async function addToCart(page, productName = 'ZARA COAT 3') {
   const product = page.locator('.card-body').filter({ hasText: productName }).first();
   await product.getByRole('button', { name: 'Add To Cart' }).click();
 }
 
-export async function selectCountry(page: Page, country: string): Promise<void> {
+async function selectCountry(page, country) {
   const countryInput = page.locator('input[placeholder="Select Country"]');
   await countryInput.pressSequentially(country.slice(0, 3), { delay: 100 });
 
@@ -70,7 +47,7 @@ export async function selectCountry(page: Page, country: string): Promise<void> 
   await options.nth(optionIndex).click();
 }
 
-export async function stubOrderHistory(page: Page): Promise<void> {
+async function stubOrderHistory(page) {
   await page.route(
     '**/api/ecom/order/get-orders-for-customer/**',
     (route) => route.fulfill({
@@ -81,11 +58,11 @@ export async function stubOrderHistory(page: Page): Promise<void> {
   );
 }
 
-export async function stubFilteredCatalog(page: Page): Promise<void> {
+async function stubFilteredCatalog(page) {
   await page.route('**/api/ecom/product/get-all-products', async (route) => {
-    const requestBody = JSON.parse(route.request().postData() || '{}') as FilterRequest;
+    const requestBody = JSON.parse(route.request().postData() || '{}');
     const response = await route.fetch();
-    const body = await response.json() as { data: CatalogProduct[]; [key: string]: unknown };
+    const body = await response.json();
     let filteredProducts = body.data;
 
     if (
@@ -96,14 +73,9 @@ export async function stubFilteredCatalog(page: Page): Promise<void> {
         (product) => product.productName.toLowerCase() === 'iphone 13 pro',
       );
     } else if (requestBody.minPrice != null && requestBody.maxPrice != null) {
-      const { minPrice, maxPrice } = requestBody;
-      if (minPrice == null || maxPrice == null) {
-        await route.fulfill({ response, json: body });
-        return;
-      }
       filteredProducts = body.data.filter((product) => {
         const price = Number(product.productPrice);
-        return price >= minPrice && price <= maxPrice;
+        return price >= requestBody.minPrice && price <= requestBody.maxPrice;
       });
     }
 
@@ -113,3 +85,13 @@ export async function stubFilteredCatalog(page: Page): Promise<void> {
     });
   });
 }
+
+module.exports = {
+  addToCart,
+  login,
+  mockOrder,
+  mockOrderId,
+  selectCountry,
+  stubFilteredCatalog,
+  stubOrderHistory,
+};

@@ -1,6 +1,6 @@
 // Verifies price-range requests display only products in the selected range.
 import { expect, test } from '@playwright/test';
-import { login, stubFilteredCatalog } from './ecommerce-test-helpers';
+import { login, stubFilteredCatalog } from '../../test-utilities/typescript/ecommerce-test-helpers';
 
 test('filters products by minimum and maximum price', async ({ page }) => {
   await stubFilteredCatalog(page);

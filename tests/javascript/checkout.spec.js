@@ -1,6 +1,6 @@
 // Checks that checkout shows the selected product and payment controls.
 const { expect, test } = require('@playwright/test');
-const { addToCart, login } = require('./ecommerce-test-helpers');
+const { addToCart, login } = require('../../test-utilities/javascript/ecommerce-test-helpers');
 
 test('opens checkout with the order summary and payment fields', async ({ page }) => {
   await login(page);

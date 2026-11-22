@@ -1,6 +1,6 @@
 // Verifies order history renders a deterministic order returned by the API.
 import { expect, test } from '@playwright/test';
-import { login, mockOrder, stubOrderHistory } from './ecommerce-test-helpers';
+import { login, mockOrder, stubOrderHistory } from '../../test-utilities/typescript/ecommerce-test-helpers';
 
 test('shows order history entries and their available actions', async ({ page }) => {
   await stubOrderHistory(page);

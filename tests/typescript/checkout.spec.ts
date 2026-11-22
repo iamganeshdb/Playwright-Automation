@@ -1,6 +1,6 @@
 // Checks that checkout shows the selected product and payment controls.
 import { expect, test } from '@playwright/test';
-import { addToCart, login } from './ecommerce-test-helpers';
+import { addToCart, login } from '../../test-utilities/typescript/ecommerce-test-helpers';
 
 test('opens checkout with the order summary and payment fields', async ({ page }) => {
   await login(page);

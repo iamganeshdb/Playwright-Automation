@@ -1,6 +1,6 @@
 // Checks that authentication, cart, checkout, and orders survive navigation and refresh.
 import { expect, test } from '@playwright/test';
-import { addToCart, login, mockOrder, stubOrderHistory } from './ecommerce-test-helpers';
+import { addToCart, login, mockOrder, stubOrderHistory } from '../../test-utilities/typescript/ecommerce-test-helpers';
 
 test('keeps the session consistent through refresh and navigation', async ({ page }) => {
   await stubOrderHistory(page);

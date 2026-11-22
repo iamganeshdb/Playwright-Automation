@@ -1,6 +1,6 @@
 // Checks matching and empty-result product searches.
 import { expect, test } from '@playwright/test';
-import { login } from './ecommerce-test-helpers';
+import { login } from '../../test-utilities/typescript/ecommerce-test-helpers';
 
 test('searches for matching products and displays an empty state for no match', async ({ page }) => {
   await login(page);

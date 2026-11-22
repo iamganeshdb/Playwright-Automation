@@ -1,6 +1,6 @@
 // Verifies category and subcategory requests update the visible product list.
 import { expect, test } from '@playwright/test';
-import { login, stubFilteredCatalog } from './ecommerce-test-helpers';
+import { login, stubFilteredCatalog } from '../../test-utilities/typescript/ecommerce-test-helpers';
 
 test('filters products by category and subcategory', async ({ page }) => {
   await stubFilteredCatalog(page);

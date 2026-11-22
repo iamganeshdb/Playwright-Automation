@@ -1,6 +1,6 @@
 // Creates an order through the API, then verifies its details in the authenticated orders UI.
 import { expect, request, test } from '@playwright/test';
-import { ApiTestUtils, type CreatedOrder } from './api-test-utils';
+import { ApiTestUtils, type CreatedOrder } from '../../test-utilities/typescript/api-test-utils';
 
 const loginPayload = {
   userEmail: 'anshika@gmail.com',

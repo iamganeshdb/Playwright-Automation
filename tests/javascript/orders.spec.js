@@ -1,6 +1,6 @@
 // Verifies order history renders a deterministic order returned by the API.
 const { expect, test } = require('@playwright/test');
-const { login, mockOrder, stubOrderHistory } = require('./ecommerce-test-helpers');
+const { login, mockOrder, stubOrderHistory } = require('../../test-utilities/javascript/ecommerce-test-helpers');
 
 test('shows order history entries and their available actions', async ({ page }) => {
   await stubOrderHistory(page);

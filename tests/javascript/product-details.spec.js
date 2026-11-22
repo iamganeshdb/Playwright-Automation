@@ -1,6 +1,6 @@
 // Checks product information on the catalog detail page.
 const { expect, test } = require('@playwright/test');
-const { login } = require('./ecommerce-test-helpers');
+const { login } = require('../../test-utilities/javascript/ecommerce-test-helpers');
 
 test('opens a product detail page with its name, price, and cart action', async ({ page }) => {
   await login(page);

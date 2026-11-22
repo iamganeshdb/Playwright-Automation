@@ -1,6 +1,6 @@
 // Checks matching and empty-result product searches.
 const { expect, test } = require('@playwright/test');
-const { login } = require('./ecommerce-test-helpers');
+const { login } = require('../../test-utilities/javascript/ecommerce-test-helpers');
 
 test('searches for matching products and displays an empty state for no match', async ({ page }) => {
   await login(page);

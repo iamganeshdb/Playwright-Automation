@@ -1,6 +1,6 @@
 // Verifies category and subcategory requests update the visible product list.
 const { expect, test } = require('@playwright/test');
-const { login, stubFilteredCatalog } = require('./ecommerce-test-helpers');
+const { login, stubFilteredCatalog } = require('../../test-utilities/javascript/ecommerce-test-helpers');
 
 test('filters products by category and subcategory', async ({ page }) => {
   await stubFilteredCatalog(page);

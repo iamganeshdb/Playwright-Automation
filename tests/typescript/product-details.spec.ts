@@ -1,6 +1,6 @@
 // Checks product information on the catalog detail page.
 import { expect, test } from '@playwright/test';
-import { login } from './ecommerce-test-helpers';
+import { login } from '../../test-utilities/typescript/ecommerce-test-helpers';
 
 test('opens a product detail page with its name, price, and cart action', async ({ page }) => {
   await login(page);

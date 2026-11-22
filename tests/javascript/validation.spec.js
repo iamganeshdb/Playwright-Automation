@@ -1,6 +1,6 @@
 // Verifies failed checkout requests show feedback without creating a real order.
 const { expect, test } = require('@playwright/test');
-const { addToCart, login, selectCountry } = require('./ecommerce-test-helpers');
+const { addToCart, login, selectCountry } = require('../../test-utilities/javascript/ecommerce-test-helpers');
 
 test('shows an error when invalid checkout data is rejected', async ({ page }) => {
   let interceptedOrderRequest = false;

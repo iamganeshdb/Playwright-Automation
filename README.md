@@ -56,7 +56,7 @@ Other useful commands:
 
 Playwright screenshots and traces are collected for failed tests. The HTML report is written to `playwright-report/`; Cucumber writes `cucumber-report.html`.
 
-Playwright tests are maintained in matching JavaScript and TypeScript folders. `npm test` currently discovers 66 tests across both projects. Both folders also contain language-specific demos.
+Playwright tests are maintained in matching JavaScript and TypeScript folders. `npm test` currently discovers 66 tests across both projects. The JavaScript folder also contains two language demos that are not discovered as tests.
 
 ## Cucumber scenarios
 
@@ -66,12 +66,13 @@ The feature is in `features/Ecommerce.feature`; reusable step code is in `featur
 
 ## Project layout
 
-- `tests/javascript/` — JavaScript Playwright specs, examples, and helper.
-- `tests/typescript/` — Matching TypeScript specs, examples, and typed helper.
+- `tests/javascript/` — JavaScript Playwright specs and language demos.
+- `tests/typescript/` — TypeScript Playwright specs.
 - `features/` — Cucumber feature, step definitions, and support hooks.
 - `page-objects/javascript/` — JavaScript page objects.
 - `page-objects/typescript/` — TypeScript page objects.
-- `test-utilities/javascript/` — JavaScript API helper used by the API specs.
+- `test-utilities/javascript/` — JavaScript API and e-commerce test helpers.
+- `test-utilities/typescript/` — Typed API and e-commerce test helpers.
 - `test-utilities/shared/` — Order test data used by both language suites.
 - `.github/agents/` — Optional Copilot agents for test planning, generation, and debugging.
 - `.github/workflows/` — GitHub Actions workflow definitions.

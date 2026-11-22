@@ -1,6 +1,6 @@
 // Removes a product from the cart and verifies the empty state.
 const { expect, test } = require('@playwright/test');
-const { addToCart, login } = require('./ecommerce-test-helpers');
+const { addToCart, login } = require('../../test-utilities/javascript/ecommerce-test-helpers');
 
 test('removes a product from the cart', async ({ page }) => {
   await login(page);

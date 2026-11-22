@@ -1,6 +1,6 @@
 // Verifies that catalog cards show product names, prices, and actions.
 const { expect, test } = require('@playwright/test');
-const { login } = require('./ecommerce-test-helpers');
+const { login } = require('../../test-utilities/javascript/ecommerce-test-helpers');
 
 test('shows product cards with names, prices, and actions', async ({ page }) => {
   await login(page);

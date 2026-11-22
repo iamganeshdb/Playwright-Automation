@@ -1,6 +1,6 @@
 // Checks that authentication, cart, checkout, and orders survive navigation and refresh.
 const { expect, test } = require('@playwright/test');
-const { addToCart, login, mockOrder, stubOrderHistory } = require('./ecommerce-test-helpers');
+const { addToCart, login, mockOrder, stubOrderHistory } = require('../../test-utilities/javascript/ecommerce-test-helpers');
 
 test('keeps the session consistent through refresh and navigation', async ({ page }) => {
   await stubOrderHistory(page);

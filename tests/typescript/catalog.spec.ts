@@ -1,6 +1,6 @@
 // Verifies that catalog cards show product names, prices, and actions.
 import { expect, test } from '@playwright/test';
-import { login } from './ecommerce-test-helpers';
+import { login } from '../../test-utilities/typescript/ecommerce-test-helpers';
 
 test('shows product cards with names, prices, and actions', async ({ page }) => {
   await login(page);
